@@ -1,21 +1,24 @@
 #include "easyfind.hpp"
-#include <algorithm>
+// #include <algorithm>
 #include <iostream>
-#include <list>
 #include <string>
 #include <vector>
 
 using std::cerr;
 using std::cout;
 using std::endl;
-using std::list;
 using std::string;
 using std::vector;
 
+void init_vector(vector<int> &v, int a) {
+  for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
+    *it = a++;
+}
+
 int main()
 {
-    vector<int> a(3, 4);
-    list<int>   b(3, 4);
-    cout << easyfind(b, 2) << endl;
+    vector<int> a(90);
+    init_vector(a, 90);
+    cout << easyfind(a, 93) << endl;
     return 0;
 }

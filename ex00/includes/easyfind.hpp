@@ -7,8 +7,7 @@
 template<typename T>
 int easyfind(const T &container, const int &find)
 {
-    typename T::const_iterator it = std::find(container.begin(), container.end(), find);
-    return (it != container.end() ? *it : throw std::runtime_error("Not found!"));
+    return (*std::find(container.begin(), container.end(), find));
 }
 
 #endif // EASYFIND_HPP
