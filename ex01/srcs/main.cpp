@@ -1,13 +1,16 @@
 #include "Span.hpp"
 #include <iostream>
 
-int main() {
-	Span a(5);
+void init_span(Span &span, uint N) {
+	for (uint i = 0; i < N; i++) {
+		span.addNumber(rand() % 10000000);
+	}
+}
 
-	a.addNumber(0);
-	a.addNumber(5);
-	a.addNumber(60);
-	a.addNumber(63);
+int main() {
+	Span a(1000);
+
+	init_span(a, 1000);
 	cout << a.shortestSpan() << endl;
 	return 0;
 }
